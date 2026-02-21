@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clinton Tech Portfolio</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      .header {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        font-size: 20px;
+        flex-wrap: wrap;
+        width: 100%;
+        padding: 15px 0;
+        color: white;
+        background-color: blue;
+      }
+
+      .container {
+        display: grid;
+        grid-template-columns: 1fr 4fr;
+        min-height: calc(100vh - 80px);
+      }
+
+      .left-tab {
+        display: flex;
+        flex-direction: column;
+        background-color: rgb(160, 160, 223);
+        align-items: center;
+        padding: 20px 10px;
+        gap: 20px;
+      }
+      .right-tab {
+        background-color: yellow;
+        padding: 20px;
+        animation: colour 2s infinite alternate;
+      }
+      @keyframes colour {
+        0% {
+          background: linear-gradient(45deg blue, yellow);
+        }
+        50% {
+          background: linear-gradient(90deg blue, yellow);
+        }
+        100% {
+          background: linear-gradient(125deg blue, yellow);
+        }
+      }
+
+      .profile {
+        width: 150px;
+        height: 150px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        border: solid 4px rgb(165, 255, 165);
+        border-radius: 50%;
+        padding: 15px;
+        color: white;
+        font-size: 16px;
+        text-transform: uppercase;
+        background-color: green;
+        word-break: break-word;
+      }
+
+      .specialization {
+        width: 100%;
+        background-color: blueviolet;
+        border: solid 3px green;
+        border-style: groove;
+        border-radius: 19px;
+        padding: 10px 0;
+        transition: all 1s ease;
+        list-style-type: none;
+      }
+      .grid:last-child {
+        grid-column: 1/-1;
+      }
+
+      .specialization > li:hover {
+        background-color: rgb(236, 236, 236);
+        border: solid 3px green;
+        color: green;
+        border-style: groove;
+        margin-top: 0;
+      }
+
+      .specialization li {
+        background-color: transparent;
+        text-align: center;
+        color: white;
+        padding: 8px 15px;
+        margin: 5px 10px;
+        border-radius: 10px;
+        background-color: rgb(114, 161, 27);
+        list-style-type: none;
+      }
+
+      .inside {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-auto-rows: minmax(100px, auto);
+        gap: 15px;
+        color: black;
+        padding: 10px;
+      }
+
+      .grid {
+        background: linear-gradient(45deg, purple, pink);
+        background-color: blueviolet;
+        border: solid 2px yellow;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 15px;
+        color: rgb(0, 0, 0);
+        font-style: normal;
+        font-size: 24px;
+        font-weight: bold;
+        overflow: hidden;
+        transition: 2s;
+      }
+      .covering-div {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 60px;
+        border-top: 1px solid;
+        z-index: 2;
+        background-color: rgba(
+          rgb(222, 185, 253),
+          rgb(63, 0, 49),
+          rgb(171, 202, 97) e,
+          alpha
+        );
+      }
+      .grid:hover {
+        background: linear-gradient(135deg, purple, pink);
+        background-color: rgb(30, 8, 51);
+        border: solid 2px rgb(3, 53, 161);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 15px;
+        color: rgb(122, 136, 0);
+        font-size: 24px;
+        font-weight: bold;
+      }
+
+      .greedy {
+        border: solid 2px green;
+        padding: 10px;
+        margin-bottom: 10px;
+        background-color: #e0e0e0;
+        border-radius: 10px;
+        text-align: center;
+      }
+      .me {
+        font-weight: bold;
+        font-size: 1.2em;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <strong>CLINTON TECH PORTFOLIO</strong>
+      <span>ASSIGNMENT BY SKILL BOOST</span>
+    </div>
+
+    <div class="container">
+      <div class="left-tab">
+        <div class="profile">Clinton's Profile</div>
+
+        <ul class="specialization">
+          <li>Full-Stack Developer</li>
+          <li>AI Enthusiast</li>
+          <li>Frontend Dev</li>
+          <li>Tech Coach</li>
+        </ul>
+      </div>
+
+      <div class="right-tab">
+        <div class="greedy">
+          <p class="me">
+            <strong
+              >Welcome to my portfolio! Here are some of my projects:</strong
+            >
+          </p>
+        </div>
+        <div class="inside">
+          <div class="grid">Project 1</div>
+          <div class="grid">Project 2</div>
+          <div class="grid">Project 3</div>
+          <div class="grid">Project 4</div>
+          <div class="grid">Project 5</div>
+          <div class="grid">Project 6</div>
+          <div class="grid">Project 7</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
