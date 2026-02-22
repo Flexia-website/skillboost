@@ -1,213 +1,268 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Clinton Tech Portfolio</title>
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clinton Tech | Professional Portfolio</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+    }
 
-      .header {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        text-align: center;
-        font-size: 20px;
-        flex-wrap: wrap;
-        width: 100%;
-        padding: 15px 0;
-        color: white;
-        background-color: blue;
-      }
+    body {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      padding: 20px;
+    }
 
+    .header {
+      background: linear-gradient(135deg, #6B73FF 0%, #000DFF 100%);
+      padding: 25px 20px;
+      border-radius: 20px 20px 0 0;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      margin-bottom: 5px;
+      text-align: center;
+      color: white;
+    }
+
+    .header strong {
+      font-size: 28px;
+      letter-spacing: 1px;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 20px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .left-tab {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 25px 20px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+      height: fit-content;
+      border: 1px solid rgba(255,255,255,0.3);
+      text-align: center;
+    }
+
+    .profile {
+      width: 150px;
+      height: 150px;
+      margin: 0 auto 20px;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      border-radius: 50%;
+      border: 4px solid white;
+      box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+      overflow: hidden;
+    }
+
+    .profile img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .specialization {
+      list-style: none;
+      width: 100%;
+    }
+
+    .specialization li {
+      background: white;
+      padding: 12px 15px;
+      margin-bottom: 8px;
+      border-radius: 10px;
+      color: #2c3e50;
+      font-weight: 500;
+      font-size: 15px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      border-left: 3px solid #667eea;
+      transition: all 0.2s ease;
+    }
+
+    .specialization li:hover {
+      border-left-width: 8px;
+      border-left-color: #764ba2;
+      background: #f8f9fa;
+    }
+
+    .right-tab {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 25px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+      border: 1px solid rgba(255,255,255,0.3);
+    }
+
+    .greedy {
+      background: linear-gradient(135deg, #141E30 0%, #243B55 100%);
+      padding: 25px;
+      border-radius: 15px;
+      margin-bottom: 25px;
+      text-align: center;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+
+    .me {
+      color: white;
+      font-size: 24px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      background: linear-gradient(135deg, #fff, #e0e0e0);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .inside {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+    }
+
+    .grid {
+      background: linear-gradient(135deg, #f5f7fa 0%, #e9ecef 100%);
+      border: none;
+      border-radius: 15px;
+      padding: 30px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      font-weight: 700;
+      color: #2c3e50;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+      transition: all 0.2s ease;
+      border: 1px solid rgba(102, 126, 234, 0.1);
+    }
+
+    .grid:hover {
+      transform: translateY(-3px);
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+    }
+
+    .grid:last-child {
+      grid-column: 1 / -1;
+      background: linear-gradient(135deg, #141E30 0%, #243B55 100%);
+      color: white;
+      font-size: 32px;
+    }
+
+    .grid:last-child:hover {
+      background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    }
+
+    @media (max-width: 768px) {
+      body {
+        padding: 10px;
+      }
+      
       .container {
-        display: grid;
-        grid-template-columns: 1fr 4fr;
-        min-height: calc(100vh - 80px);
+        grid-template-columns: 1fr;
       }
-
-      .left-tab {
-        display: flex;
-        flex-direction: column;
-        background-color: rgb(160, 160, 223);
-        align-items: center;
-        padding: 20px 10px;
-        gap: 20px;
+      
+      .header strong {
+        font-size: 22px;
       }
-      .right-tab {
-        background-color: yellow;
-        padding: 20px;
-        animation: colour 2s infinite alternate;
-      }
-      @keyframes colour {
-        0% {
-          background: linear-gradient(45deg blue, yellow);
-        }
-        50% {
-          background: linear-gradient(90deg blue, yellow);
-        }
-        100% {
-          background: linear-gradient(125deg blue, yellow);
-        }
-      }
-
+      
       .profile {
-        width: 150px;
-        height: 150px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        border: solid 4px rgb(165, 255, 165);
-        border-radius: 50%;
-        padding: 15px;
-        color: white;
-        font-size: 16px;
-        text-transform: uppercase;
-        background-color: green;
-        word-break: break-word;
+        width: 120px;
+        height: 120px;
       }
-
-      .specialization {
-        width: 100%;
-        background-color: blueviolet;
-        border: solid 3px green;
-        border-style: groove;
-        border-radius: 19px;
-        padding: 10px 0;
-        transition: all 1s ease;
-        list-style-type: none;
-      }
-      .grid:last-child {
-        grid-column: 1/-1;
-      }
-
-      .specialization > li:hover {
-        background-color: rgb(236, 236, 236);
-        border: solid 3px green;
-        color: green;
-        border-style: groove;
-        margin-top: 0;
-      }
-
-      .specialization li {
-        background-color: transparent;
-        text-align: center;
-        color: white;
-        padding: 8px 15px;
-        margin: 5px 10px;
-        border-radius: 10px;
-        background-color: rgb(114, 161, 27);
-        list-style-type: none;
-      }
-
-      .inside {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-auto-rows: minmax(100px, auto);
-        gap: 15px;
-        color: black;
-        padding: 10px;
-      }
-
-      .grid {
-        background: linear-gradient(45deg, purple, pink);
-        background-color: blueviolet;
-        border: solid 2px yellow;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border-radius: 15px;
-        color: rgb(0, 0, 0);
-        font-style: normal;
-        font-size: 24px;
-        font-weight: bold;
-        overflow: hidden;
-        transition: 2s;
-      }
-      .covering-div {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 60px;
-        border-top: 1px solid;
-        z-index: 2;
-        background-color: rgba(
-          rgb(222, 185, 253),
-          rgb(63, 0, 49),
-          rgb(171, 202, 97) e,
-          alpha
-        );
-      }
-      .grid:hover {
-        background: linear-gradient(135deg, purple, pink);
-        background-color: rgb(30, 8, 51);
-        border: solid 2px rgb(3, 53, 161);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border-radius: 15px;
-        color: rgb(122, 136, 0);
-        font-size: 24px;
-        font-weight: bold;
-      }
-
-      .greedy {
-        border: solid 2px green;
-        padding: 10px;
-        margin-bottom: 10px;
-        background-color: #e0e0e0;
-        border-radius: 10px;
-        text-align: center;
-      }
+      
       .me {
-        font-weight: bold;
-        font-size: 1.2em;
+        font-size: 18px;
       }
-    </style>
-  </head>
-  <body>
-    <div class="header">
-      <strong>CLINTON TECH PORTFOLIO</strong>
-      <span>ASSIGNMENT BY SKILL BOOST</span>
-    </div>
+    }
 
-    <div class="container">
-      <div class="left-tab">
-        <div class="profile">Clinton's Profile</div>
+    .left-tab {
+      animation: slideInLeft 0.5s ease;
+    }
 
-        <ul class="specialization">
-          <li>Full-Stack Developer</li>
-          <li>AI Enthusiast</li>
-          <li>Frontend Dev</li>
-          <li>Tech Coach</li>
-        </ul>
+    .right-tab {
+      animation: slideInRight 0.5s ease;
+    }
+
+    @keyframes slideInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes slideInRight {
+      from {
+        opacity: 0;
+        transform: translateX(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    .header span {
+      font-size: 16px;
+      opacity: 0.9;
+      font-weight: 300;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <strong>CLINTON TECH PORTFOLIO</strong>
+    <span>Professional Showcase</span><br>
+    <span style="font-size: 14px;">SKILL BOOST</span>
+  </div>
+
+  <div class="container">
+    <div class="left-tab">
+      <div class="profile">
+        <img src="face.png" alt="Clinton Tech Profile" onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg, #667eea, #764ba2)'; this.parentElement.style.display='flex'; this.parentElement.style.alignItems='center'; this.parentElement.style.justifyContent='center'; this.parentElement.innerHTML='CT'; this.parentElement.style.color='white'; this.parentElement.style.fontWeight='bold'; this.parentElement.style.fontSize='24px';">
       </div>
 
-      <div class="right-tab">
-        <div class="greedy">
-          <p class="me">
-            <strong
-              >Welcome to my portfolio! Here are some of my projects:</strong
-            >
-          </p>
-        </div>
-        <div class="inside">
-          <div class="grid">Project 1</div>
-          <div class="grid">Project 2</div>
-          <div class="grid">Project 3</div>
-          <div class="grid">Project 4</div>
-          <div class="grid">Project 5</div>
-          <div class="grid">Project 6</div>
-          <div class="grid">Project 7</div>
-        </div>
+      <ul class="specialization">
+        <li>Frontend Developer</li>
+        <li>Backend Developer</li>
+        <li>UI Designer</li>
+        <li>Tech Mentor</li>
+      </ul>
+    </div>
+
+    <div class="right-tab">
+      <div class="greedy">
+        <p class="me"><strong>Featured Projects</strong></p>
+      </div>
+
+      <div class="inside">
+        <div class="grid">1</div>
+        <div class="grid">2</div>
+        <div class="grid">3</div>
+        <div class="grid">4</div>
+        <div class="grid">5</div>
+        <div class="grid">6</div>
+        <div class="grid">7+</div>
       </div>
     </div>
-  </body>
+  </div>
+</body>
 </html>
-
